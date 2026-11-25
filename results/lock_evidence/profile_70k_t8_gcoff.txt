@@ -1,0 +1,192 @@
+# case_ACTIVSg70k k=8 threads=8 wall 4.582 s, commit pre-1.3.0
+ Count  Overhead File                                                                                        Line Function
+ =====  ======== ====                                                                                        ==== ========
+   201         0 @juliasrc/array.c                                                                           300 ijl_alloc_string
+   202         0 @Base/strings/string.jl                                                                     136 _string_n
+   212         0 @Base/sort.jl                                                                              1137 _sort!(v::Vector{NamedTuple}, a::Base.Sort.ScratchQuickSort{Missing, Missing, Base.Sort.InsertionSortAlg}, o::Base.Order.By{Sparlectra.…
+   214         0 @Base/sort.jl                                                                              1135 _sort!(v::Vector{NamedTuple}, a::Base.Sort.ScratchQuickSort{Missing, Missing, Base.Sort.InsertionSortAlg}, o::Base.Order.By{Sparlectra.…
+   215         0 @juliasrc/jltypes.c                                                                        1837 typekeyvalue_hash
+   219         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        2946 runpf!(net::Net, maxIte::Int64, tolerance::Float64, verbose::Int64; method::Symbol, damp::Float64, autodamp::Bool, autodamp_min::Float6…
+   219         0 @Sparlectra/src/powerflow_rectangular/ac_islands.jl                                         275 detect_ac_islands
+   240        13 @juliasrc/support/hashing.h                                                                  31 bitmix
+   241       241 /lib64/libc.so.6                                                                              ? __memset_avx2_unaligned_erms
+   244         0 @Base/array.jl                                                                             1349 _push!
+   244        29 @Base/array.jl                                                                             1044 __safe_setindex!
+   254         0 @Base/sort.jl                                                                              1158 _sort!(v::Vector{NamedTuple}, a::Base.Sort.ScratchQuickSort{Missing, Missing, Base.Sort.InsertionSortAlg}, o::Base.Order.By{Sparlectra.…
+   259         0 @Base/array.jl                                                                             1020 setindex!
+   259       200 @Base/array.jl                                                                             1025 _setindex!
+   261         0 @Sparlectra/src/powerflow_rectangular/rectangular_diagnostics.jl                            338 _rectangular_mismatch_diagnostics(Ybus::SparseArrays.SparseMatrixCSC{ComplexF64, Int64}, V::Vector{ComplexF64}, S::Vector{ComplexF64}, …
+   271         0 @juliasrc/jltypes.c                                                                        1143 lookup_typevalue
+   276         0 @juliasrc/gc-stock.c                                                                        783 ijl_gc_small_alloc
+   279         0 @Sparlectra/src/powerflow_rectangular/rectangular_factorized_solver.jl                      151 solve_newton_factorized!(ctx::UmfpackReuseNewtonContext, J::SparseArrays.SparseMatrixCSC{Float64, Int64}, rhs::Vector{Float64}; pattern…
+   279         0 @SparseArrays/src/solvers/umfpack.jl                                                        944 ldiv!
+   279         0 @SparseArrays/src/solvers/umfpack.jl                                                        963 _Aq_ldiv_B!
+   279         0 @SparseArrays/src/solvers/umfpack.jl                                                        968 _AqldivB_kernel!
+   279         0 @SparseArrays/src/solvers/umfpack.jl                                                        646 solve!
+   279         0 @SparseArrays/src/solvers/umfpack.jl                                                        660 solve!(x::Vector{Float64}, lu::SparseArrays.UMFPACK.UmfpackLU{Float64, Int64}, b::Vector{Float64}, typ::Int64; workspace::SparseArrays.…
+   279         0 @SparseArrays/src/solvers/umfpack.jl                                                        664 macro expansion
+   279         0 @SparseArrays/src/solvers/wrappers.jl                                                      2618 umfpack_dl_wsolve
+   279         0 @julialib/julia/libumfpack.so.6                                                               ? umfpack_dl_wsolve
+   279        11 @julialib/julia/libumfpack.so.6                                                               ? umfdl_solve
+   285         0 @Base/sort.jl                                                                              1154 _sort!(v::Vector{NamedTuple}, a::Base.Sort.ScratchQuickSort{Missing, Missing, Base.Sort.InsertionSortAlg}, o::Base.Order.By{Sparlectra.…
+   286        36 @Base/Base_compiler.jl                                                                       57 getproperty
+   297       136 @julialib/julia/libumfpack.so.6                                                               ? umfdl_scale_column
+   302         0 @Base/array.jl                                                                             1345 push!
+   347         0 @Sparlectra/src/powerflow_rectangular/rectangular_finalization.jl                            35 _sync_rectangular_bus_types_to_net!(net::Net, bus_types::Vector{Symbol})
+   378         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1426 runpf_rectangular!(net::Net; method::Symbol, maxiter::Int64, tol::Float64, damp::Float64, verbose::Int64, autodamp::Bool, autodamp_min:…
+   378         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1427 #1766
+   378         0 @Sparlectra/src/node.jl                                                                     412 setNodeType!
+   378         0 @Sparlectra/src/node.jl                                                                     378 toNodeType
+   378         0 @Base/strings/unicode.jl                                                                    640 uppercase
+   380       303 @julialib/julia/libumfpack.so.6                                                               ? umfdl_build_tuples
+   401         0 @juliasrc/builtins.c                                                                       1059 jl_f_getfield
+   411         0 @Sparlectra/src/powerflow_rectangular/rectangular_newton_step.jl                            576 complex_newton_step_rectangular(Ybus::SparseArrays.SparseMatrixCSC{ComplexF64, Int64}, V::Vector{ComplexF64}, S::Vector{ComplexF64}; sl…
+   411         0 @Sparlectra/src/powerflow_rectangular/rectangular_newton_step.jl                            577 #1282
+   411         0 @Sparlectra/src/powerflow_rectangular/rectangular_jacobian_builders.jl                      538 build_rectangular_jacobian_pq_pv
+   411         0 @Sparlectra/src/powerflow_rectangular/rectangular_jacobian_builders.jl                      553 #build_rectangular_jacobian_pq_pv#1267
+   411         0 @Sparlectra/src/powerflow_rectangular/rectangular_jacobian_builders.jl                      140 build_rectangular_jacobian_pq_pv_sparse
+   419       411 @julialib/julia/libumfpack.so.6                                                               ? umf_l_colamd
+   449         0 @Sparlectra/src/scenario/engine.jl                                                          297 _reset_scenario_worker!(work::Net, template::Net)
+   474         0 @Sparlectra/src/scenario/engine.jl                                                          286 _reset_scenario_worker!(work::Net, template::Net)
+   479         0 @Sparlectra/src/powerflow_rectangular/rectangular_diagnostics.jl                            174 _rectangular_mismatch_rows(Ybus::SparseArrays.SparseMatrixCSC{ComplexF64, Int64}, V::Vector{ComplexF64}, S::Vector{ComplexF64}, bus_typ…
+   479         0 @Base/sort.jl                                                                               802 _sort!(v::Vector{NamedTuple}, a::Base.Sort.Small{10, Base.Sort.InsertionSortAlg, Base.Sort.IEEEFloatOptimization{Base.Sort.IsUIntMappab…
+   479         0 @Base/sort.jl                                                                              1380 _sort!
+   482         0 @Sparlectra/src/scenario/engine.jl                                                          255 _scenario_copy_scalar_fields!
+   482         0 @Base/runtime_internals.jl                                                                  382 fieldnames
+   483         0 @juliasrc/gf.c                                                                             4406 ijl_apply_generic
+   489         0 @Base/sort.jl                                                                              1734 sort!
+   489         0 @Base/sort.jl                                                                              1741 #sort!#24
+   489         0 @Base/sort.jl                                                                              1594 _sort!
+   489         0 @Base/sort.jl                                                                               561 _sort!
+   489         0 @Base/sort.jl                                                                               686 _sort!
+   489         0 @Base/sort.jl                                                                               747 _sort!
+   489         0 @Base/sort.jl                                                                               731 _sort!
+   489         0 @Base/sort.jl                                                                               780 _sort!
+   489         0 @Base/sort.jl                                                                              1123 _sort!
+   495         0 @juliasrc/datatype.c                                                                       1556 ijl_box_int64
+   495       337 @julialib/julia/libumfpack.so.6                                                               ? umfdl_store_lu
+   506         0 @Sparlectra/src/powerflow_rectangular/rectangular_diagnostics.jl                            342 _rectangular_mismatch_diagnostics(Ybus::SparseArrays.SparseMatrixCSC{ComplexF64, Int64}, V::Vector{ComplexF64}, S::Vector{ComplexF64}, …
+   506         0 @Sparlectra/src/powerflow_rectangular/rectangular_diagnostics.jl                            262 _rectangular_mismatch_snapshot
+   506         0 @Sparlectra/src/powerflow_rectangular/rectangular_diagnostics.jl                            264 #_rectangular_mismatch_snapshot#1512
+   518         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1502 runpf_rectangular!(net::Net; method::Symbol, maxiter::Int64, tol::Float64, damp::Float64, verbose::Int64, autodamp::Bool, autodamp_min:…
+   518         0 @Sparlectra/src/powerflow_rectangular/rectangular_final_status.jl                           199 kwcall(::@NamedTuple{wrong_branch_detection::Symbol, wrong_branch_min_vm_pu::Float64, wrong_branch_max_vm_pu::Float64, wrong_branch_max…
+   518         0 @Sparlectra/src/powerflow_rectangular/rectangular_final_status.jl                           226 _finalize_rectangular_wrong_branch_diagnostics(V::Vector{ComplexF64}, bus_types::Vector{Symbol}, Vset::Vector{Float64}, slack_idx::Int6…
+   518         0 @Sparlectra/src/powerflow_rectangular/rectangular_wrong_branch.jl                           137 _check_wrong_branch_solution
+   521         0 @SparseArrays/src/solvers/umfpack.jl                                                        619 macro expansion
+   521         0 @SparseArrays/src/solvers/umfpack.jl                                                        587 umfpack_symbolic!(U::SparseArrays.UMFPACK.UmfpackLU{Float64, Int64}, q::Nothing)
+   521         0 @SparseArrays/src/solvers/umfpack.jl                                                        590 macro expansion
+   521         0 @SparseArrays/src/solvers/wrappers.jl                                                      2353 umfpack_dl_symbolic
+   521         0 @julialib/julia/libumfpack.so.6                                                               ? umfpack_dl_symbolic
+   521         0 @julialib/julia/libumfpack.so.6                                                               ? umfpack_dl_qsymbolic
+   521        52 @julialib/julia/libumfpack.so.6                                                               ? symbolic_analysis
+   542         3 @Sparlectra/src/scenario/engine.jl                                                          262 _scenario_copy_scalar_fields!
+   767         0 @Sparlectra/src/powerflow_rectangular/rectangular_diagnostics.jl                            162 _rectangular_mismatch_rows
+   773         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1531 runpf_rectangular!(net::Net; method::Symbol, maxiter::Int64, tol::Float64, damp::Float64, verbose::Int64, autodamp::Bool, autodamp_min:…
+   773         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1532 (::Sparlectra.var"#1778#1779"{Bool, Net, Float64, Vector{NamedTuple}, Vector{Float64}, Vector{Float64}, Vector{Symbol}, Int64})()
+   773         0 @Sparlectra/src/powerflow_rectangular/rectangular_diagnostics.jl                            300 kwcall(::@NamedTuple{light::Bool, net::Net, history::Vector{Float64}, step_diagnostics::Vector{NamedTuple}, best_finite_iteration::Int6…
+   824       824 @julialib/julia/libumfpack.so.6                                                               ? umfdl_row_search
+   988         0 @julialib/julia/sys.so                                                                        ? jfptr_wait_forever_31691.1
+   988         0 @Base/task.jl                                                                              1196 wait_forever()
+  1072       904 @julialib/julia/libumfpack.so.6                                                               ? umfdl_assemble
+  1113       448 @julialib/julia/libumfpack.so.6                                                               ? umfdl_kernel_init
+  2165         8 @julialib/julia/libopenblas64_.so                                                             ? dtrsv_64_
+  2364        24 @julialib/julia/libopenblas64_.so                                                             ? blas_memory_free
+  2455      2455 /lib64/libc.so.6                                                                              ? __GI___lll_lock_wake
+  2553         1 @julialib/julia/libopenblas64_.so                                                             ? dgemm_64_
+  2612         0 @juliasrc/datatype.c                                                                       1154 ijl_new_bits
+  2714         0 scripts/profile_threads.jl   24 run_all(workers::Vector{Net}, net::Net, sc::InjectionScenarios, cfg::PowerFlowConfig, qdata::Sparlectra._BatchQLimitData, k::Int64)
+  2714         0 @Base/task.jl                                                                               663 macro expansion
+  2714         0 @Base/task.jl                                                                               589 sync_end(c::Channel{Any})
+  2714         0 @Base/task.jl                                                                               312 _wait(t::Task)
+  2724         0 /workspace/srcdir/glibc-2.17/csu/../sysdeps/x86_64/start.S                                  123 [unknown function]
+  2724         0 /lib64/libc.so.6                                                                              ? __libc_start_main
+  2724         0 /lib64/libc.so.6                                                                              ? __libc_start_call_main
+  2724         0 /cache/build/builder-amdci4-1/julialang/julia-ci/cli/loader_exe.c                            58 main
+  2724         0 @juliasrc/jlapi.c                                                                          1152 jl_repl_entrypoint
+  2724         0 @juliasrc/jlapi.c                                                                           985 true_main
+  2724         0 @julialib/julia/sys.so                                                                        ? jfptr__start_57951.1
+  2724         0 @Base/client.jl                                                                             577 _start()
+  2724         0 @Base/client.jl                                                                             344 exec_options(opts::Base.JLOptions)
+  2724         0 @Base/Base.jl                                                                               309 include(mod::Module, _path::String)
+  2724         0 @Base/loading.jl                                                                           3124 _include(mapexpr::Function, mod::Module, _path::String)
+  2724         0 @Base/loading.jl                                                                           3064 include_string(mapexpr::typeof(identity), mod::Module, code::String, filename::String)
+  2724         0 @Base/boot.jl                                                                               489 eval(m::Module, e::Any)
+  2724         0 @juliasrc/toplevel.c                                                                        799 ijl_toplevel_eval_in
+  2724         0 @juliasrc/toplevel.c                                                                        754 ijl_toplevel_eval
+  2724         0 @juliasrc/toplevel.c                                                                        683 jl_toplevel_eval_flex
+  2724         0 @juliasrc/toplevel.c                                                                        585 jl_eval_toplevel_stmts
+  2724         0 @juliasrc/toplevel.c                                                                        731 jl_toplevel_eval_flex
+  2724         0 @Base/timing.jl                                                                             463 top-level scope
+  2724         0 @Profile/src/Profile.jl                                                                      60 macro expansion
+  2724         0 @Base/condition.jl                                                                          136 wait
+  2724         0 @Base/condition.jl                                                                          141 wait(c::Base.GenericCondition{Base.Threads.SpinLock}; first::Bool)
+  2791       336 /lib64/libc.so.6                                                                              ? __GI___pthread_mutex_unlock_usercnt
+  2843        13 @Sparlectra/src/scenario/engine.jl                                                          260 _scenario_copy_scalar_fields!
+  2861         6 @juliasrc/datatype.c                                                                       1858 ijl_get_nth_field
+  3059         0 @juliasrc/datatype.c                                                                       1874 ijl_get_nth_field_checked
+  3078         0 @Sparlectra/src/scenario/engine.jl                                                          291 _reset_scenario_worker!(work::Net, template::Net)
+  3192         0 @SparseArrays/src/solvers/umfpack.jl                                                        373 #lu#9
+  3210         0 @Sparlectra/src/powerflow_rectangular/rectangular_factorized_solver.jl                      139 solve_newton_factorized!(ctx::UmfpackReuseNewtonContext, J::SparseArrays.SparseMatrixCSC{Float64, Int64}, rhs::Vector{Float64}; pattern…
+  3210         0 @Sparlectra/src/powerflow_rectangular/rectangular_factorized_solver.jl                       99 _newton_full_factorization
+  3210         0 @SparseArrays/src/solvers/umfpack.jl                                                        369 lu(S::SparseArrays.SparseMatrixCSC{Float64, Int64})
+  3312       235 @julialib/julia/libumfpack.so.6                                                               ? umfdl_local_search
+  3406         9 @julialib/julia/libopenblas64_.so                                                             ? dtrsm_64_
+  3507         0 @juliasrc/gc-stock.c                                                                        806 jl_gc_alloc_
+  3507         0 @juliasrc/gc-stock.c                                                                        792 jl_gc_small_alloc_noinline
+  3563      3563 @juliasrc/gc-stock.c                                                                       3601 ijl_gc_collect
+  3599         0 @juliasrc/gc-stock.c                                                                        355 maybe_collect
+  3610         0 @juliasrc/gc-stock.c                                                                        734 jl_gc_small_alloc_inner
+  3712         0 @Base/task.jl                                                                              1297 wait()
+  3712         0 @juliasrc/scheduler.c                                                                       614 ijl_task_get_next
+  4027         0 @Sparlectra/src/scenario/injection_batch.jl                                                 257 _injection_cpu_one(work::Net, template::Net, scen::InjectionScenarios, cfg::PowerFlowConfig, qdata::Sparlectra._BatchQLimitData, s::Int…
+  4366        50 @julialib/julia/libopenblas64_.so                                                             ? blas_memory_alloc
+  4512      4512 /lib64/libc.so.6                                                                              ? __GI___lll_lock_wait
+  5075       563 /lib64/libc.so.6                                                                              ? pthread_mutex_lock
+  5963         3 @julialib/julia/libumfpack.so.6                                                               ? umfdl_blas3_update
+ 10048         0 @SparseArrays/src/solvers/umfpack.jl                                                        471 lu!(F::SparseArrays.UMFPACK.UmfpackLU{Float64, Int64}, S::SparseArrays.SparseMatrixCSC{Float64, Int64}; check::Bool, reuse_symbolic::Bo…
+ 10048         0 @SparseArrays/src/solvers/umfpack.jl                                                        474 lu!
+ 10048         0 @SparseArrays/src/solvers/umfpack.jl                                                        479 #lu!#18
+ 10103         0 @Sparlectra/src/powerflow_rectangular/rectangular_factorized_solver.jl                      145 solve_newton_factorized!(ctx::UmfpackReuseNewtonContext, J::SparseArrays.SparseMatrixCSC{Float64, Int64}, rhs::Vector{Float64}; pattern…
+ 10103         0 @Sparlectra/src/powerflow_rectangular/rectangular_factorized_solver.jl                      100 _newton_refactorize!
+ 10103         0 @SparseArrays/src/solvers/umfpack.jl                                                        445 lu!
+ 12712        15 @julialib/julia/libumfpack.so.6                                                               ? umfdl_kernel
+ 12719         0 @SparseArrays/src/solvers/umfpack.jl                                                        622 macro expansion
+ 12719         0 @SparseArrays/src/solvers/wrappers.jl                                                      2380 umfpack_dl_numeric
+ 12719         0 @julialib/julia/libumfpack.so.6                                                               ? umfpack_dl_numeric
+ 13240         0 @SparseArrays/src/solvers/umfpack.jl                                                        615 umfpack_numeric!
+ 13240         0 @SparseArrays/src/solvers/umfpack.jl                                                        616 umfpack_numeric!(U::SparseArrays.UMFPACK.UmfpackLU{Float64, Int64}; reuse_numeric::Bool, q::Nothing)
+ 13519         0 @Base/lock.jl                                                                               376 macro expansion
+ 13620         0 @Sparlectra/src/powerflow_rectangular/rectangular_newton_step.jl                            605 (::Sparlectra.var"#1284#1285"{Vector{Symbol}, Bool, UmfpackReuseNewtonContext, SparseArrays.SparseMatrixCSC{Float64, Int64}, Bool, Bool…
+ 13620         0 @Sparlectra/src/powerflow_rectangular/rectangular_factorized_solver.jl                      130 solve_newton_factorized!
+ 13624         0 @Sparlectra/src/powerflow_rectangular/rectangular_newton_step.jl                            583 complex_newton_step_rectangular(Ybus::SparseArrays.SparseMatrixCSC{ComplexF64, Int64}, V::Vector{ComplexF64}, S::Vector{ComplexF64}; sl…
+ 14119         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1280 (::Sparlectra.var"#1760#1761"{Float64, Bool, Float64, Symbol, Bool, Float64, Float64, Float64, Float64, Bool, Bool, Float64, Float64, F…
+ 14119         0 @Sparlectra/src/powerflow_rectangular/rectangular_newton_step.jl                            497 kwcall(::@NamedTuple{slack_idx::Int64, damp::Float64, autodamp::Bool, autodamp_min::Float64, newton_update::Symbol, bus_types::Vector{S…
+ 14120         1 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1279 runpf_rectangular!(net::Net; method::Symbol, maxiter::Int64, tol::Float64, damp::Float64, verbose::Int64, autodamp::Bool, autodamp_min:…
+ 14186         0 @Sparlectra/src/performance_profile.jl                                                       46 _perf_profile_time!(f::Sparlectra.var"#1780#1781"{Float64, Int64, Bool, Symbol, Bool, Symbol, Int64, Bool, Bool, Int64, Bool, Int64, Bo…
+ 15600         0 @Sparlectra/src/performance_profile.jl                                                       46 _perf_profile_time!
+ 16295         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                           ? runpf!(net::Net, maxIte::Int64, tolerance::Float64, verbose::Int64; method::Symbol, damp::Float64, autodamp::Bool, autodamp_min::Float6…
+ 16295         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1657 runpf_rectangular!
+ 16295         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1870 #runpf_rectangular!#1782
+ 16295         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                         294 runpf_rectangular!
+ 16548         0 @Sparlectra/src/scenario/injection_batch.jl                                                 236 _injection_cpu_one(work::Net, template::Net, scen::InjectionScenarios, cfg::PowerFlowConfig, qdata::Sparlectra._BatchQLimitData, s::Int…
+ 16548         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        2313 runpf!
+ 16548         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        2346 #runpf!#1792
+ 16548         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        2186 _runpf_with_config!
+ 16548         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        2194 _runpf_with_config!(net::Net, config::PowerFlowConfig; verbose::Int64, damp::Float64, pv_table_rows::Int64, validate_limits_after_pf::B…
+ 16548         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1919 _runpf_config_once!
+ 16548         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1932 #_runpf_config_once!#1784
+ 16548         0 @Sparlectra/src/powerflow_rectangular/rectangular_compute_backend.jl                         29 _with_compute_backend
+ 16548         0 @Base/scopedvalues.jl                                                                       324 with(::Sparlectra.var"#1786#1787"{Int64, Float64, Int64, Bool, Float64, Symbol, Nothing, Nothing, Nothing, Nothing, Net, PowerFlowConfi…
+ 16548         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        1933 #1786
+ 16548         0 @Sparlectra/src/powerflow_rectangular/rectangular_network_solver.jl                        2781 runpf!
+ 19066         0 /lib64/libc.so.6                                                                              ? __clone3
+ 19066         0 /lib64/libc.so.6                                                                              ? start_thread
+ 19066         0 @juliasrc/gc-stock.c                                                                       3729 jl_parallel_gc_threadfun
+ 20621         0 scripts/profile_threads.jl   25 (::var"#run_all##0#run_all##1"{Vector{Net}, Net, InjectionScenarios, PowerFlowConfig, Sparlectra._BatchQLimitData, Int64, Int64})()
+ 21631         0 @juliasrc/task.c                                                                           1287 start_task
+ 22778         0 /workspace/srcdir/libuv/src/unix/thread.c                                                   822 uv_cond_wait
+ 22788         0 /lib64/libc.so.6                                                                              ? pthread_cond_wait
+ 22788     22787 /lib64/libc.so.6                                                                              ? __futex_abstimed_wait_common
+ 23335        39 [any unknown stackframes]
+ 24355         0 @juliasrc/julia.h                                                                          2319 jl_apply
+Total snapshots: 43577. Utilization: 91% across all threads and tasks. Use the `groupby` kwarg to break down by thread and/or task.
